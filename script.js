@@ -12,7 +12,7 @@ async function createToken() {
   const accounts = await web3.eth.getAccounts();
   
   await contract.methods.createToken(name, symbol, decimals, initialSupply)
-    .send({ from: accounts[0], value: web3.utils.toWei('0.0001', 'ether') });
+    .send({ from: accounts[0], value: web3.utils.toWei('0', 'ether') });
 
   alert('Token created!');
 }
