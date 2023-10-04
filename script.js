@@ -7,7 +7,8 @@ const expectedChainId = 0xcc; // Binance Smart Chain Mainnet chain ID
 async function connectWallet() {
   if (typeof window.ethereum !== 'undefined') {
     try {
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      // Prompt user to connect wallet
+      await window.ethereum.request({ method: 'eth_requestAccounts' });
       web3 = new Web3(window.ethereum);
       contract = new web3.eth.Contract(contractABI, contractAddress);
 
